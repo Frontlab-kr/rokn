@@ -456,7 +456,7 @@
   --bd-violet-bg: var(--bd-violet);
   --bd-toc-color: var(--bd-violet);
   --bd-sidebar-link-bg: rgba(var(--bd-violet-rgb), .1);
-  --bd-callout-link: 10, 88, 202;
+  --bd-callout-link: 81, 79, 178;
   --bd-callout-code-color: #ab296a;
   --bd-pre-bg: var(--bs-tertiary-bg);
 }
@@ -466,7 +466,7 @@
   --bd-violet-bg: #712cf9;
   --bd-toc-color: var(--bs-emphasis-color);
   --bd-sidebar-link-bg: rgba(85, 33, 187, .5);
-  --bd-callout-link: 110, 168, 254;
+  --bd-callout-link: 163, 161, 236;
   --bd-callout-code-color: #e685b5;
   --bd-pre-bg: #1b1f22;
 }
@@ -1011,19 +1011,19 @@
   --bs-body-color: var(--bs-white);
   --bs-body-color-rgb: 255, 255, 255;
   --bs-body-bg: var(--bs-blue);
-  --bs-body-bg-rgb: 13, 110, 253;
-  --bs-tertiary-bg: #0a58ca;
+  --bs-body-bg-rgb: 101, 99, 223;
+  --bs-tertiary-bg: #514fb2;
 }
 [data-bs-theme=blue] .dropdown-menu {
-  --bs-dropdown-bg: #0c63e4;
-  --bs-dropdown-link-active-bg: #084298;
+  --bs-dropdown-bg: #5b59c9;
+  --bs-dropdown-link-active-bg: #3d3b86;
 }
 [data-bs-theme=blue] .btn-secondary {
-  --bs-btn-bg: #3d8bfc;
+  --bs-btn-bg: #8482e4;
   --bs-btn-border-color: rgba(255, 255, 255, 0.25);
-  --bs-btn-hover-bg: #247cfc;
+  --bs-btn-hover-bg: #6f6ddf;
   --bs-btn-hover-border-color: rgba(255, 255, 255, 0.25);
-  --bs-btn-active-bg: #0b6dfb;
+  --bs-btn-active-bg: #5b58db;
   --bs-btn-active-border-color: rgba(255, 255, 255, 0.5);
   --bs-btn-focus-border-color: rgba(255, 255, 255, 0.5);
   --bs-btn-focus-box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .2);
@@ -1505,7 +1505,7 @@
   width: 2rem;
   height: 2rem;
   background-color: var(--bs-body-color);
-  border-radius: 0.375rem;
+  border-radius: 0.625rem;
 }
 
 .bd-example-position-examples::after {
@@ -1740,7 +1740,7 @@
 
 .swatch-blue {
   color: #fff;
-  background-color: #0d6efd;
+  background-color: #6563df;
 }
 .swatch-blue::after {
   position: absolute;
@@ -1750,8 +1750,8 @@
   font-size: 0.75rem;
   line-height: 1.35;
   white-space: pre;
-  content: "4.50" "\a" "4.50" "\a" "4.66";
-  background-color: #0d6efd;
+  content: "4.76" "\a" "4.76" "\a" "4.40";
+  background-color: #6563df;
   background-image: linear-gradient(to bottom, transparent 0.25rem, #fff 0.25rem 0.75rem, transparent 0.75rem 1.25rem, #fff 1.25rem 1.75rem, transparent 1.75rem 2.25rem, #000 2.25rem 2.75rem, transparent 2.75rem);
   background-repeat: no-repeat;
   background-size: 0.5rem 100%;
@@ -1815,8 +1815,8 @@
 }
 
 .swatch-red {
-  color: #fff;
-  background-color: #dc3545;
+  color: #000;
+  background-color: #dc6060;
 }
 .swatch-red::after {
   position: absolute;
@@ -1826,9 +1826,9 @@
   font-size: 0.75rem;
   line-height: 1.35;
   white-space: pre;
-  content: "4.52" "\a" "4.52" "\a" "4.63";
-  background-color: #dc3545;
-  background-image: linear-gradient(to bottom, transparent 0.25rem, #fff 0.25rem 0.75rem, transparent 0.75rem 1.25rem, #fff 1.25rem 1.75rem, transparent 1.75rem 2.25rem, #000 2.25rem 2.75rem, transparent 2.75rem);
+  content: "5.88" "\a" "3.56" "\a" "5.88";
+  background-color: #dc6060;
+  background-image: linear-gradient(to bottom, transparent 0.25rem, #000 0.25rem 0.75rem, transparent 0.75rem 1.25rem, #fff 1.25rem 1.75rem, transparent 1.75rem 2.25rem, #000 2.25rem 2.75rem, transparent 2.75rem);
   background-repeat: no-repeat;
   background-size: 0.5rem 100%;
 }
@@ -2025,47 +2025,47 @@
 
 .bd-blue-100 {
   color: #000;
-  background-color: #cfe2ff;
+  background-color: #e0e0f9;
 }
 
 .bd-blue-200 {
   color: #000;
-  background-color: #9ec5fe;
+  background-color: #c1c1f2;
 }
 
 .bd-blue-300 {
   color: #000;
-  background-color: #6ea8fe;
+  background-color: #a3a1ec;
 }
 
 .bd-blue-400 {
   color: #000;
-  background-color: #3d8bfd;
+  background-color: #8482e5;
 }
 
 .bd-blue-500 {
   color: #fff;
-  background-color: #0d6efd;
+  background-color: #6563df;
 }
 
 .bd-blue-600 {
   color: #fff;
-  background-color: #0a58ca;
+  background-color: #514fb2;
 }
 
 .bd-blue-700 {
   color: #fff;
-  background-color: #084298;
+  background-color: #3d3b86;
 }
 
 .bd-blue-800 {
   color: #fff;
-  background-color: #052c65;
+  background-color: #282859;
 }
 
 .bd-blue-900 {
   color: #fff;
-  background-color: #031633;
+  background-color: #14142d;
 }
 
 .bd-indigo-100 {
@@ -2205,47 +2205,47 @@
 
 .bd-red-100 {
   color: #000;
-  background-color: #f8d7da;
+  background-color: #f8dfdf;
 }
 
 .bd-red-200 {
   color: #000;
-  background-color: #f1aeb5;
+  background-color: #f1bfbf;
 }
 
 .bd-red-300 {
   color: #000;
-  background-color: #ea868f;
+  background-color: #eaa0a0;
 }
 
 .bd-red-400 {
   color: #000;
-  background-color: #e35d6a;
+  background-color: #e38080;
 }
 
 .bd-red-500 {
-  color: #fff;
-  background-color: #dc3545;
+  color: #000;
+  background-color: #dc6060;
 }
 
 .bd-red-600 {
   color: #fff;
-  background-color: #b02a37;
+  background-color: #b04d4d;
 }
 
 .bd-red-700 {
   color: #fff;
-  background-color: #842029;
+  background-color: #843a3a;
 }
 
 .bd-red-800 {
   color: #fff;
-  background-color: #58151c;
+  background-color: #582626;
 }
 
 .bd-red-900 {
   color: #fff;
-  background-color: #2c0b0e;
+  background-color: #2c1313;
 }
 
 .bd-orange-100 {
@@ -2480,12 +2480,12 @@
 
 .bd-gray-200 {
   color: #000;
-  background-color: #e9ecef;
+  background-color: #eceef0;
 }
 
 .bd-gray-300 {
   color: #000;
-  background-color: #dee2e6;
+  background-color: #d3d3d3;
 }
 
 .bd-gray-400 {
@@ -2609,11 +2609,11 @@ main [tabindex="0"] {
   --base05: #333;
   --base06: #fff;
   --base07: #13795b;
-  --base08: #c6303e;
+  --base08: #c65757;
   --base09: #087990;
   --base0A: #6f42c1;
-  --base0B: #084298;
-  --base0C: #084298;
+  --base0B: #3d3b86;
+  --base0C: #3d3b86;
   --base0D: #6f42c1;
   --base0E: #ab296a;
   --base0F: #333;
@@ -2631,12 +2631,12 @@ main [tabindex="0"] {
   --base0A: #ffe69c;
   --base0B: #79dfc1;
   --base0C: #79dfc1;
-  --base0D: #6ea8fe;
+  --base0D: #a3a1ec;
   --base0E: #c29ffa;
-  --base0F: #ea868f;
+  --base0F: #eaa0a0;
 }
 [data-bs-theme=dark] .language-diff .gd {
-  color: #e35d6a;
+  color: #e38080;
 }
 [data-bs-theme=dark] .language-diff .gi {
   color: #479f76;
@@ -2928,7 +2928,7 @@ main [tabindex="0"] {
 .anchor-link {
   padding: 0 0.175rem;
   font-weight: 400;
-  color: rgba(13, 110, 253, 0.5);
+  color: rgba(101, 99, 223, 0.5);
   text-decoration: none;
   opacity: 0;
   transition: color 0.15s ease-in-out, opacity 0.15s ease-in-out;
@@ -2942,7 +2942,7 @@ main [tabindex="0"] {
   content: "#";
 }
 .anchor-link:focus, .anchor-link:hover, :hover > .anchor-link, :target > .anchor-link {
-  color: #0d6efd;
+  color: #6563df;
   text-decoration: none;
   opacity: 1;
 }

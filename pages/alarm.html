@@ -9,36 +9,167 @@
   </head>
   <body>
     <div class="rokn">
+      <header class="rokn-header">
+        <h1>알림함</h1>
+        <button class="rokn-header__close">닫기</button>
+      </header>
       <div class="rokn-alarm">
-        <header class="rokn-alarm">
-          <h1>알림함</h1>
-          <button class="rokn-alarm__close">닫기</button>
-        </header>
         <div class="rokn-info">
           <p>
             알림 메세지를 삭제하실 경우, ‘전체삭제’를 선택하시거나 알림 메시지를
             왼쪽으로 밀어서 삭제해 주시기 바랍니다.​
           </p>
+        </div>
+        <div class="rokn-alarm__head">
+          <p>총 <strong class="text-danger">10</strong>개의 알림이 있습니다.</p>
           <button type="button" class="btn btn-sm btn-outline-dark">
             전체삭제
           </button>
         </div>
-        <div class="rokn-alarm__head">
-          <p>총 <strong class="text-danger">10</strong>개의 알림이 있습니다.</p>
+        <div class="rokn-list">
+          <div class="rokn-list-item">
+            <a href="" class="rokn-list-item__inner">
+              <div class="rokn-list-item__title">
+                <p>
+                  해군 3함대사령부 한시임기제군무원해군 3함대사령부
+                  한시임기제군무원해군 3함대사령부 한시임기제군무원해군
+                  3함대사령부 한시임기제군무원
+                </p>
+              </div>
+              <div class="rokn-list-item__text">
+                해군 3함대사령부 한시임기제군무원 채용 공고문입니다.해군 3함대사령부 한시임기제군원 채용 해군 3함대사령부 한시임기제군무원 채용 공고문입니다.해군 3함대사령부 한시임기제군원 채용 
+              </div>
+              <div class="rokn-list-item__date">2024.01.23 13:08:48​</div>
+            </a>
+            <button class="rokn-list-item__delete">삭제</button>
+          </div>
+          <div class="rokn-list-item">
+            <a href="" class="rokn-list-item__inner">
+              <div class="rokn-list-item__title">
+                <p>
+                  해군 3함대사령부 한시임기제군무원해군 3함대사령부
+                  한시임기제군무원해군 3함대사령부 한시임기제군무원해군
+                  3함대사령부 한시임기제군무원
+                </p>
+              </div>
+              <div class="rokn-list-item__text">
+                해군 3함대사령부 한시임기제군무원 채용 공고문입니다.해군 3함대사령부 한시임기제군원 채용 해군 3함대사령부 한시임기제군무원 채용 공고문입니다.해군 3함대사령부 한시임기제군원 채용 
+              </div>
+              <div class="rokn-list-item__date">2024.01.23 13:08:48​</div>
+            </a>
+            <button class="rokn-list-item__delete">삭제</button>
+          </div>
+          <div class="rokn-list-item">
+            <a href="" class="rokn-list-item__inner">
+              <div class="rokn-list-item__title">
+                <p>
+                  해군 3함대사령부 한시임기제군무원해군 3함대사령부
+                  한시임기제군무원해군 3함대사령부 한시임기제군무원해군
+                  3함대사령부 한시임기제군무원
+                </p>
+              </div>
+              <div class="rokn-list-item__text">
+                해군 3함대사령부 한시임기제군무원 채용 공고문입니다.해군 3함대사령부 한시임기제군원 채용 해군 3함대사령부 한시임기제군무원 채용 공고문입니다.해군 3함대사령부 한시임기제군원 채용 
+              </div>
+              <div class="rokn-list-item__date">2024.01.23 13:08:48​</div>
+            </a>
+            <button class="rokn-list-item__delete">삭제</button>
+          </div>
         </div>
-        <div class="rokn-alarm-list">
-          <a href="" class="rokn-alarm-list__item">
-            <strong>해군 3함대사령부 한시임기제군무원</strong>
-            <p>
-              해군 3함대사령부 한시임기제군무원 채용 공고문입니다.해군 3함대사령부 한시임기제군원 
-            </p>
-            <span>2024.01.23 13:08:48​</span>
-          </a>
-        </div>
-        <div class="rokn-alarm-list__button">
-          <button type="button" class="btn btn-outline-dark">더보기</button>
+        <div class="rokn-list__button">
+          <button type="button" class="btn btn-lg btn-outline-dark w-100">
+            <strong>더보기</strong>
+          </button>
         </div>
       </div>
     </div>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const listItems = document.querySelectorAll('.rokn-list-item');
+        let startX = 0;
+        let currentX = 0;
+        let isDragging = false;
+        let listItem;
+
+        listItems.forEach((item) => {
+          item.addEventListener('mousedown', handleMouseDown);
+          item.addEventListener('touchstart', handleTouchStart);
+          item.addEventListener('mousemove', handleMouseMove);
+          item.addEventListener('touchmove', handleTouchMove);
+          item.addEventListener('mouseup', handleMouseUp);
+          item.addEventListener('touchend', handleTouchEnd);
+        });
+
+        function handleMouseDown(event) {
+          startX = event.clientX;
+          isDragging = true;
+          listItem = event.currentTarget;
+        }
+
+        function handleTouchStart(event) {
+          startX = event.touches[0].clientX;
+          isDragging = true;
+          listItem = event.currentTarget;
+        }
+
+        function handleMouseMove(event) {
+          if (!isDragging) return;
+
+          currentX = event.clientX;
+          const diffX = currentX - startX;
+
+          if (diffX < 0) {
+            const itemContent = listItem.querySelector(
+              '.rokn-list-item__inner'
+            );
+            itemContent.classList.add('active');
+          }
+        }
+
+        function handleTouchMove(event) {
+          if (!isDragging) return;
+
+          currentX = event.touches[0].clientX;
+          const diffX = currentX - startX;
+
+          if (diffX < 0) {
+            const itemContent = listItem.querySelector(
+              '.rokn-list-item__inner'
+            );
+            itemContent.classList.add('active');
+          }
+        }
+
+        function handleMouseUp(event) {
+          if (!isDragging) return;
+
+          const diffX = currentX - startX;
+
+          if (diffX >= -40) {
+            const itemContent = listItem.querySelector(
+              '.rokn-list-item__inner'
+            );
+            itemContent.classList.remove('active');
+          }
+
+          isDragging = false;
+        }
+
+        function handleTouchEnd(event) {
+          if (!isDragging) return;
+
+          const diffX = currentX - startX;
+
+          if (diffX >= -40) {
+            const itemContent = listItem.querySelector(
+              '.rokn-list-item__inner'
+            );
+            itemContent.classList.remove('active');
+          }
+
+          isDragging = false;
+        }
+      });
+    </script>
   </body>
 </html>

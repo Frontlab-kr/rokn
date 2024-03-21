@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swipe to Delete</title>
+    <style>
+      .list-item {
+        height: 50px;
+        line-height: 50px;
+        border-bottom: 1px solid #ccc;
+        overflow: hidden;
+        position: relative;
+        touch-action: pan-y; /* 세로 스와이프만 허용 */
+      }
+      .item-content {
+        position: relative;
+        left: 0;
+        transition: left 0.3s ease; /* 애니메이션 효과를 위한 CSS 속성 */
+      }
+      .item-content.active {
+        left: -80px; /* 스와이프로 보여질 위치 */
+      }
+      .delete-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 80px;
+        height: 100%;
+        background-color: red;
+        color: white;
+        text-align: center;
+        line-height: 50px;
+        transition: width 0.3s ease; /* 애니메이션 효과를 위한 CSS 속성 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="list-item">
+      <div class="item-content">Item 1</div>
+      <div class="delete-btn">Delete</div>
+    </div>
+    <!-- 추가 아이템들을 위해 필요한 마크업 -->
+  </body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const listItems = document.querySelectorAll('.list-item');
+      let startX = 0;
+      let currentX = 0;
+      let isDragging = false;
+      let listItem;
+
+      listItems.forEach((item) => {
+        item.addEventListener('mousedown', handleMouseDown);
+        item.addEventListener('touchstart', handleTouchStart);
+        item.addEventListener('mousemove', handleMouseMove);
+        item.addEventListener('touchmove', handleTouchMove);
+        item.addEventListener('mouseup', handleMouseUp);
+        item.addEventListener('touchend', handleTouchEnd);
+      });
+
+      function handleMouseDown(event) {
+        startX = event.clientX;
+        isDragging = true;
+        listItem = event.currentTarget;
+      }
+
+      function handleTouchStart(event) {
+        startX = event.touches[0].clientX;
+        isDragging = true;
+        listItem = event.currentTarget;
+      }
+
+      function handleMouseMove(event) {
+        if (!isDragging) return;
+
+        currentX = event.clientX;
+        const diffX = currentX - startX;
+
+        if (diffX < 0) {
+          const itemContent = listItem.querySelector('.item-content');
+          itemContent.classList.add('active');
+        }
+      }
+
+      function handleTouchMove(event) {
+        if (!isDragging) return;
+
+        currentX = event.touches[0].clientX;
+        const diffX = currentX - startX;
+
+        if (diffX < 0) {
+          const itemContent = listItem.querySelector('.item-content');
+          itemContent.classList.add('active');
+        }
+      }
+
+      function handleMouseUp(event) {
+        if (!isDragging) return;
+
+        const diffX = currentX - startX;
+
+        if (diffX >= -40) {
+          const itemContent = listItem.querySelector('.item-content');
+          itemContent.classList.remove('active');
+        }
+
+        isDragging = false;
+      }
+
+      function handleTouchEnd(event) {
+        if (!isDragging) return;
+
+        const diffX = currentX - startX;
+
+        if (diffX >= -40) {
+          const itemContent = listItem.querySelector('.item-content');
+          itemContent.classList.remove('active');
+        }
+
+        isDragging = false;
+      }
+    });
+  </script>
+</html>
